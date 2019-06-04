@@ -19,13 +19,21 @@ import java.util.List;
  * Name: SchoolListFragment
  * Purpose: Displays a list of NYC schools in a recyclerview.
  */
-public class SchoolListFragment extends Fragment implements SchoolListView {
+public class SchoolListFragment extends Fragment implements SchoolListView, MyRecyclerViewClickListener {
 
-    private SchoolListPresenter mSchoolListPresenter;
     private RecyclerView mSchoolList;
+    private OnSchoolClickedListener mCallback;
 
     public SchoolListFragment() {
         // Required empty public constructor
+    }
+
+    /**
+     * Sets up school clicked listener for this fragment
+     * @param listener main activity
+     */
+    public void setOnSchoolClickedListener(OnSchoolClickedListener listener){
+        mCallback = listener;
     }
 
     @Override
@@ -35,9 +43,9 @@ public class SchoolListFragment extends Fragment implements SchoolListView {
         View view = inflater.inflate(R.layout.fragment_school_list, container, false);
 
         //Create the presenter
-        mSchoolListPresenter = new SchoolListPresenter(this);
+        SchoolListPresenter mSchoolListPresenter = new SchoolListPresenter(this);
 
-        //Bind the RecyclerView
+        //Bind the RecyclerView and set up its onclicklistener
         mSchoolList = view.findViewById(R.id.recycler_school_list);
 
         //Start downloading list of schools
@@ -55,7 +63,7 @@ public class SchoolListFragment extends Fragment implements SchoolListView {
     public void populateListOfSchools(List<SchoolPOJO> schoolList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         mSchoolList.setLayoutManager(layoutManager);
-        mSchoolList.setAdapter(new SchoolListAdapter(schoolList));
+        mSchoolList.setAdapter(new SchoolListAdapter(this ,schoolList));
     }
 
     /**
@@ -64,5 +72,18 @@ public class SchoolListFragment extends Fragment implements SchoolListView {
     @Override
     public void displayErrorToast() {
         Toast.makeText(getContext(), R.string.service_request_failed, Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * Gets the dbKey of a clicked school.
+     * @param dbKey dbKey
+     */
+    @Override
+    public void onItemSelected(String dbKey) {
+        mCallback.onSchoolSelected(dbKey);
+    }
+
+    public interface OnSchoolClickedListener{
+        void onSchoolSelected(String dbKey);
     }
 }

@@ -10,31 +10,38 @@ import android.widget.TextView;
 import com.example.a20190604_rosscentanni_nycschools.Model.SchoolPOJO;
 import com.example.a20190604_rosscentanni_nycschools.R;
 
-import org.w3c.dom.Text;
 
 import java.util.List;
 
 class SchoolListAdapter extends RecyclerView.Adapter<SchoolListAdapter.MyViewHolder> {
 
     private List<SchoolPOJO> mDataset;
+    private MyRecyclerViewClickListener mListener;
 
     /**
      * Public constructor
      * @param schoolList a list of SchoolPOJO objects
      */
-    SchoolListAdapter(List<SchoolPOJO> schoolList) {
+    SchoolListAdapter(MyRecyclerViewClickListener listener, List<SchoolPOJO> schoolList) {
+        mListener = listener;
         mDataset = schoolList;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView schoolName;
         TextView schoolBorough;
 
         MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            schoolName = itemView.findViewById(R.id.tv_school_name);
-            schoolBorough = itemView.findViewById(R.id.tv_school_borough);
+            schoolName = itemView.findViewById(R.id.tv_list_school_name);
+            schoolBorough = itemView.findViewById(R.id.tv_list_school_borough);
+            itemView.setOnClickListener(this);
 
+        }
+
+        @Override
+        public void onClick(View v) {
+            mListener.onItemSelected(mDataset.get(getAdapterPosition()).getId());
         }
     }
 
@@ -58,14 +65,5 @@ class SchoolListAdapter extends RecyclerView.Adapter<SchoolListAdapter.MyViewHol
     @Override
     public int getItemCount() {
         return mDataset.size();
-    }
-
-    /**
-     * Gets the SchoolPOJO object associated with a position in the recyclerview
-     * @param position an int position
-     * @return a single SchoolPOJO object
-     */
-    public SchoolPOJO getItem(int position){
-        return mDataset.get(position);
     }
 }

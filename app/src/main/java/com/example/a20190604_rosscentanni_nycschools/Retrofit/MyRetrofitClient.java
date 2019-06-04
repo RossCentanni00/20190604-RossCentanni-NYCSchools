@@ -3,6 +3,7 @@ package com.example.a20190604_rosscentanni_nycschools.Retrofit;
 import android.util.Log;
 
 import com.example.a20190604_rosscentanni_nycschools.Model.SchoolPOJO;
+import com.example.a20190604_rosscentanni_nycschools.Model.ScoresPOJO;
 
 import java.util.List;
 
@@ -17,14 +18,13 @@ public class MyRetrofitClient {
     private static final String BASE_URL = "https://data.cityofnewyork.us/resource/";
 
     private static MyRetrofitClient instance;
-    private Retrofit retrofit;
     private SchoolAPI schoolAPI;
 
     /**
      * Private constructor for singleton.
      */
     private MyRetrofitClient(){
-        retrofit = new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -36,11 +36,9 @@ public class MyRetrofitClient {
      */
     public static MyRetrofitClient getInstance(){
         if (instance == null){
-            return new MyRetrofitClient();
+            instance = new MyRetrofitClient();
         }
-        else{
             return instance;
-        }
     }
 
     /**
@@ -63,6 +61,31 @@ public class MyRetrofitClient {
 
             @Override
             public void onFailure(Call<List<SchoolPOJO>> call, Throwable t) {
+                Log.e(TAG, t.getMessage());
+                callback.onRequestFailure();
+            }
+        });
+    }
+
+
+    public void schoolInfoRequest(final SchoolInfoRequestCallback callback, String dbKey) {
+        Log.d(TAG, dbKey);
+        Call<List<ScoresPOJO>> call = schoolAPI.schoolInfoRequest(dbKey);
+        call.enqueue(new Callback<List<ScoresPOJO>>() {
+            @Override
+            public void onResponse(Call<List<ScoresPOJO>> call, Response<List<ScoresPOJO>> response) {
+                if(response.isSuccessful()){
+                    Log.d(TAG, response.body().toString());
+                    List<ScoresPOJO> scores = response.body();
+                    callback.onRequestSuccess(scores);
+                }else {
+                    Log.d(TAG, response.errorBody().toString());
+                    callback.onRequestFailure();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ScoresPOJO>> call, Throwable t) {
                 Log.e(TAG, t.getMessage());
                 callback.onRequestFailure();
             }

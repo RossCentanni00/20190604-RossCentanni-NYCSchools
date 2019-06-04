@@ -3,4 +3,7 @@
 
    <string name="permission_denied_toast">This application does not work without Internet access!</string>
     <string name="service_request_failed">Unable to download list of schools. Please try again later.</string>
+    <string name="label_avg_sat_reading">Avg. SAT Reading:</string>
+    <string name="label_avg_sat_writing">Avg. SAT Writing:</string>
+    <string name="label_avg_sat_math">Avg. SAT Math:</string>
 </resources>

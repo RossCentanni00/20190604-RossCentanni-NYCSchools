@@ -7,13 +7,13 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/tv_school_name"
+        android:id="@+id/tv_list_school_name"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/tv_school_borough"
+        android:id="@+id/tv_list_school_borough"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

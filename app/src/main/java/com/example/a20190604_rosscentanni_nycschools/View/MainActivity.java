@@ -4,6 +4,7 @@ import android.Manifest;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import static android.content.pm.PackageManager.*;
  * Name: MainActivity
  * Purpose: Contains the School List and Info fragments, checks for necessary permissions.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SchoolListFragment.OnSchoolClickedListener {
 
     private static final String TAG = MainActivity.class.getSimpleName() + "_TAG";
     private static final int REQUEST_INTERNET_PERMISSION = 333;
@@ -79,24 +80,41 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Loads the school info fragment.
-     */
-    /*
-        private void openSchoolInfoFragment(){
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, new SchoolInfoFragment())
-                .commit();
-    }
-     */
-
-
-    /**
      * Checks to see if application has permission to use Internet
      * @return true if it does, false if not
      */
     private boolean appHasPermissions() {
         return ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) ==
                 PERMISSION_GRANTED;
+    }
+
+    /**
+     * Sets the callback for the SchoolListFragment
+     * @param fragment a fragment
+     */
+    @Override
+    public void onAttachFragment(Fragment fragment) {
+        if(fragment instanceof SchoolListFragment){
+            SchoolListFragment schoolListFragment = (SchoolListFragment) fragment;
+            schoolListFragment.setOnSchoolClickedListener(this);
+        }
+    }
+
+    /**
+     * After a school on the list is clicked, open its info screen
+     * @param dbKey the database key used to query SAT scores
+     */
+    @Override
+    public void onSchoolSelected(String dbKey) {
+        SchoolInfoFragment fragment = new SchoolInfoFragment();
+        Bundle args = new Bundle();
+        args.putString("dbKey", dbKey);
+
+        fragment.setArguments(args);
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 }
