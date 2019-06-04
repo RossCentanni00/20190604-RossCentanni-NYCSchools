@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">20190604-RossCentanni-NYCSchools</string>
+
+   <string name="permission_denied_toast">This application does not work without Internet access!</string>
+    <string name="service_request_failed">Unable to download list of schools. Please try again later.</string>
+</resources>
