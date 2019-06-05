@@ -12,6 +12,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.a20190604_rosscentanni_nycschools.R;
+import com.example.a20190604_rosscentanni_nycschools.View.SchoolInfo.SchoolInfoFragment;
+import com.example.a20190604_rosscentanni_nycschools.View.SchoolList.SchoolListFragment;
 
 import static android.content.pm.PackageManager.*;
 
@@ -23,8 +25,9 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
 
     private static final String TAG = MainActivity.class.getSimpleName() + "_TAG";
     private static final int REQUEST_INTERNET_PERMISSION = 333;
+
     /*
-        LIFECYCLE METHODS
+        LIFECYCLE/SYSTEM METHODS
      */
 
     @Override
@@ -33,10 +36,10 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
         setContentView(R.layout.activity_main);
 
         //Start by checking for permissions.
-        if(appHasPermissions()){
+        if (appHasPermissions()) {
             //If we have permission to use Internet, go ahead and load the school list fragment.
             openSchoolList();
-        } else{
+        } else {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.INTERNET},
                     REQUEST_INTERNET_PERMISSION);
@@ -45,16 +48,17 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
 
     /**
      * Callback for permission request
-     * @param requestCode the request code used to make the request
-     * @param permissions the permissions requested
+     *
+     * @param requestCode  the request code used to make the request
+     * @param permissions  the permissions requested
      * @param grantResults the results of each request
      */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
-        if(requestCode == REQUEST_INTERNET_PERMISSION){
+        if (requestCode == REQUEST_INTERNET_PERMISSION) {
             //Since we only have one permission to worry about, we can hardcode indices for now
-            if(grantResults.length > 0 && grantResults[0] == PERMISSION_GRANTED){
+            if (grantResults.length > 0 && grantResults[0] == PERMISSION_GRANTED) {
                 //We can open school list fragment now.
                 openSchoolList();
             } else {
@@ -63,6 +67,43 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
                         .show();
             }
         }
+    }
+
+    /**
+     * Sets the callback for the SchoolListFragment
+     *
+     * @param fragment a fragment
+     */
+    @Override
+    public void onAttachFragment(Fragment fragment) {
+        if (fragment instanceof SchoolListFragment) {
+            SchoolListFragment schoolListFragment = (SchoolListFragment) fragment;
+            schoolListFragment.setOnSchoolClickedListener(this);
+        }
+    }
+
+    /*
+        PUBLIC METHODS
+     */
+
+    /**
+     * After a school on the list is clicked, open its info screen
+     *
+     * @param dbKey the database key used to query SAT scores
+     */
+    @Override
+    public void onSchoolSelected(String dbKey, String schoolName) {
+        SchoolInfoFragment fragment = new SchoolInfoFragment();
+        Bundle args = new Bundle();
+        args.putString("dbKey", dbKey);
+        args.putString("schoolName", schoolName);
+
+        fragment.setArguments(args);
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 
     /*
@@ -81,40 +122,11 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
 
     /**
      * Checks to see if application has permission to use Internet
+     *
      * @return true if it does, false if not
      */
     private boolean appHasPermissions() {
         return ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET) ==
                 PERMISSION_GRANTED;
-    }
-
-    /**
-     * Sets the callback for the SchoolListFragment
-     * @param fragment a fragment
-     */
-    @Override
-    public void onAttachFragment(Fragment fragment) {
-        if(fragment instanceof SchoolListFragment){
-            SchoolListFragment schoolListFragment = (SchoolListFragment) fragment;
-            schoolListFragment.setOnSchoolClickedListener(this);
-        }
-    }
-
-    /**
-     * After a school on the list is clicked, open its info screen
-     * @param dbKey the database key used to query SAT scores
-     */
-    @Override
-    public void onSchoolSelected(String dbKey) {
-        SchoolInfoFragment fragment = new SchoolInfoFragment();
-        Bundle args = new Bundle();
-        args.putString("dbKey", dbKey);
-
-        fragment.setArguments(args);
-
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .commit();
     }
 }

@@ -3,7 +3,7 @@ package com.example.a20190604_rosscentanni_nycschools.Presenter;
 import com.example.a20190604_rosscentanni_nycschools.Model.SchoolPOJO;
 import com.example.a20190604_rosscentanni_nycschools.Retrofit.MyRetrofitClient;
 import com.example.a20190604_rosscentanni_nycschools.Retrofit.SchoolListRequestCallback;
-import com.example.a20190604_rosscentanni_nycschools.View.SchoolListView;
+import com.example.a20190604_rosscentanni_nycschools.View.SchoolList.SchoolListView;
 
 import java.util.List;
 
@@ -23,6 +23,9 @@ public class SchoolListPresenter implements SchoolListRequestCallback {
         mSchoolListView = view;
     }
 
+    /*
+        PUBLIC METHODS
+     */
 
     /**
      * Queries the Retrofit client for a list of current NYC schools.
@@ -32,8 +35,9 @@ public class SchoolListPresenter implements SchoolListRequestCallback {
     }
 
     /**
-     * Fired off by Retrofit client when request is successful
-     * @param schoolList a list of NYC schools
+     * Fired off by Retrofit client when request is successful, passes the list of schools
+     * to the view.
+     * @param schoolList a list of NYC schools, list should never be empty.
      */
     @Override
     public void onRequestSuccess(List<SchoolPOJO> schoolList) {

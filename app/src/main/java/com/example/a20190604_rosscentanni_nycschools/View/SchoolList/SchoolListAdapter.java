@@ -1,4 +1,4 @@
-package com.example.a20190604_rosscentanni_nycschools.View;
+package com.example.a20190604_rosscentanni_nycschools.View.SchoolList;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +13,10 @@ import com.example.a20190604_rosscentanni_nycschools.R;
 
 import java.util.List;
 
+/**
+ * Name: SchoolListAdapter
+ * Purpose: Adapter for the SchoolListFragment RecyclerView
+ */
 class SchoolListAdapter extends RecyclerView.Adapter<SchoolListAdapter.MyViewHolder> {
 
     private List<SchoolPOJO> mDataset;
@@ -20,6 +24,7 @@ class SchoolListAdapter extends RecyclerView.Adapter<SchoolListAdapter.MyViewHol
 
     /**
      * Public constructor
+     *
      * @param schoolList a list of SchoolPOJO objects
      */
     SchoolListAdapter(MyRecyclerViewClickListener listener, List<SchoolPOJO> schoolList) {
@@ -27,6 +32,9 @@ class SchoolListAdapter extends RecyclerView.Adapter<SchoolListAdapter.MyViewHol
         mDataset = schoolList;
     }
 
+    /*
+        Viewholder, includes an onClick to pass data along when entry is clicked.
+     */
     class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView schoolName;
         TextView schoolBorough;
@@ -41,7 +49,8 @@ class SchoolListAdapter extends RecyclerView.Adapter<SchoolListAdapter.MyViewHol
 
         @Override
         public void onClick(View v) {
-            mListener.onItemSelected(mDataset.get(getAdapterPosition()).getId());
+            mListener.onItemSelected(mDataset.get(getAdapterPosition()).getId(),
+                    mDataset.get(getAdapterPosition()).getName());
         }
     }
 

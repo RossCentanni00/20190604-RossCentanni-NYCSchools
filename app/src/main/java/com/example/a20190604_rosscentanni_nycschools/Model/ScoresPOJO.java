@@ -2,10 +2,12 @@ package com.example.a20190604_rosscentanni_nycschools.Model;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Name: ScoresPOJO
+ * Purpose: POJO for the response from the SAT score service
+ */
 public class ScoresPOJO {
 
-    @SerializedName("school_name")
-    private String schoolName;
     @SerializedName("sat_critical_reading_avg_score")
     private String readingSATScore;
     @SerializedName("sat_math_avg_score")
@@ -13,13 +15,9 @@ public class ScoresPOJO {
     @SerializedName("sat_writing_avg_score")
     private String writingSATScore;
 
-    public String getSchoolName() {
-        return schoolName;
-    }
-
-    public void setSchoolName(String schoolName) {
-        this.schoolName = schoolName;
-    }
+    /*
+        GETTERS/SETTERS
+     */
 
     public String getReadingSATScore() {
         return readingSATScore;

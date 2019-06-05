@@ -1,6 +1,7 @@
-package com.example.a20190604_rosscentanni_nycschools.View;
+package com.example.a20190604_rosscentanni_nycschools.View.SchoolList;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,7 +18,7 @@ import java.util.List;
 
 /**
  * Name: SchoolListFragment
- * Purpose: Displays a list of NYC schools in a recyclerview.
+ * Purpose: Displays a list of NYC schools in a RecyclerView.
  */
 public class SchoolListFragment extends Fragment implements SchoolListView, MyRecyclerViewClickListener {
 
@@ -29,15 +30,18 @@ public class SchoolListFragment extends Fragment implements SchoolListView, MyRe
     }
 
     /**
-     * Sets up school clicked listener for this fragment
-     * @param listener main activity
+     * Interface for letting MainActivity know it's time to change fragments
      */
-    public void setOnSchoolClickedListener(OnSchoolClickedListener listener){
-        mCallback = listener;
+    public interface OnSchoolClickedListener {
+        void onSchoolSelected(String dbKey, String schoolName);
     }
 
+    /*
+        LIFECYCLE METHODS
+     */
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_school_list, container, false);
@@ -45,7 +49,7 @@ public class SchoolListFragment extends Fragment implements SchoolListView, MyRe
         //Create the presenter
         SchoolListPresenter mSchoolListPresenter = new SchoolListPresenter(this);
 
-        //Bind the RecyclerView and set up its onclicklistener
+        //Bind the RecyclerView
         mSchoolList = view.findViewById(R.id.recycler_school_list);
 
         //Start downloading list of schools
@@ -55,15 +59,20 @@ public class SchoolListFragment extends Fragment implements SchoolListView, MyRe
         return view;
     }
 
+    /*
+        PUBLIC METHODS
+     */
+
     /**
-     * Populates the recyclerview with a list of NYC schools
+     * Populates the RecyclerView with a list of NYC schools
+     *
      * @param schoolList a list of SchoolPOJO objects
      */
     @Override
     public void populateListOfSchools(List<SchoolPOJO> schoolList) {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         mSchoolList.setLayoutManager(layoutManager);
-        mSchoolList.setAdapter(new SchoolListAdapter(this ,schoolList));
+        mSchoolList.setAdapter(new SchoolListAdapter(this, schoolList));
     }
 
     /**
@@ -74,16 +83,24 @@ public class SchoolListFragment extends Fragment implements SchoolListView, MyRe
         Toast.makeText(getContext(), R.string.service_request_failed, Toast.LENGTH_LONG).show();
     }
 
+
     /**
-     * Gets the dbKey of a clicked school.
-     * @param dbKey dbKey
+     * Sets up school clicked listener for this fragment
+     *
+     * @param listener An instance of MainActivity
      */
-    @Override
-    public void onItemSelected(String dbKey) {
-        mCallback.onSchoolSelected(dbKey);
+    public void setOnSchoolClickedListener(OnSchoolClickedListener listener) {
+        mCallback = listener;
     }
 
-    public interface OnSchoolClickedListener{
-        void onSchoolSelected(String dbKey);
+    /**
+     * Gets the dbKey and name of a clicked school and passes it to MainActivity.
+     *
+     * @param dbKey the clicked school's internal id string
+     * @param schoolName the clicked school's name
+     */
+    @Override
+    public void onItemSelected(String dbKey, String schoolName) {
+        mCallback.onSchoolSelected(dbKey, schoolName);
     }
 }

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 /**
  * Name: SchoolPOJO
- * Purpose: POJO for a NYC School
+ * Purpose: POJO for the response from the NYC School list service
  */
 public class SchoolPOJO {
 
@@ -14,6 +14,10 @@ public class SchoolPOJO {
     private String name;
     @SerializedName("borough")
     private String borough;
+
+    /*
+        GETTERS/SETTERS
+     */
 
     public String getId() {
         return id;

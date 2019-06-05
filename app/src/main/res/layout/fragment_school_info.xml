@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.SchoolInfoFragment">
+    tools:context=".View.SchoolInfo.SchoolInfoFragment">
 
     <TextView
         android:id="@+id/tv_info_school_name"

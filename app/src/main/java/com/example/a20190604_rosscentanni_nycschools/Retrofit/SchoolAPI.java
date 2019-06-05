@@ -9,6 +9,10 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+/**
+ * Name: SchoolAPI
+ * Purpose: Retrofit API for NYC School data service calls.
+ */
 public interface SchoolAPI {
 
     @GET("s3k6-pzi2.json")
