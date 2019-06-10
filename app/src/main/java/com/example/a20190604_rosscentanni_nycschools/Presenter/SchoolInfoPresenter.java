@@ -94,7 +94,7 @@ public class SchoolInfoPresenter implements SchoolInfoRequestCallback {
             filledInData.setWritingSATScore(fillerString);
         }
         if (isStringEmptyOrTheLetterS(filledInData.getReadingSATScore())) {
-            filledInData.setWritingSATScore(fillerString);
+            filledInData.setReadingSATScore(fillerString);
         }
         if (isStringEmptyOrTheLetterS(filledInData.getMathSATScore())) {
             filledInData.setMathSATScore(fillerString);

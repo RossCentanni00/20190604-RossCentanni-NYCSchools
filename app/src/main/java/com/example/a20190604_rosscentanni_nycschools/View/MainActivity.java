@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
 
     private static final String TAG = MainActivity.class.getSimpleName() + "_TAG";
     private static final int REQUEST_INTERNET_PERMISSION = 333;
+    private static final String WAS_CONFIGURATION_CHANGE = "config_change";
 
     /*
         LIFECYCLE/SYSTEM METHODS
@@ -35,15 +36,23 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Start by checking for permissions.
-        if (appHasPermissions()) {
-            //If we have permission to use Internet, go ahead and load the school list fragment.
-            openSchoolList();
-        } else {
-            ActivityCompat.requestPermissions(this,
-                    new String[]{Manifest.permission.INTERNET},
-                    REQUEST_INTERNET_PERMISSION);
+        boolean shouldSkipOnCreate = false;
+        if(savedInstanceState != null){
+            shouldSkipOnCreate = savedInstanceState.getBoolean(WAS_CONFIGURATION_CHANGE);
         }
+
+        if(!shouldSkipOnCreate){
+            //Start by checking for permissions.
+            if (appHasPermissions()) {
+                //If we have permission to use Internet, go ahead and load the school list fragment.
+                openSchoolList();
+            } else {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.INTERNET},
+                        REQUEST_INTERNET_PERMISSION);
+            }
+        }
+
     }
 
     /**
@@ -82,6 +91,12 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
         }
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean(WAS_CONFIGURATION_CHANGE, true);
+        super.onSaveInstanceState(outState);
+    }
+
     /*
         PUBLIC METHODS
      */
@@ -103,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements SchoolListFragmen
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
                 .commit();
     }
 

@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.a20190604_rosscentanni_nycschools.Model.SchoolPOJO;
@@ -16,6 +17,8 @@ import com.example.a20190604_rosscentanni_nycschools.R;
 
 import java.util.List;
 
+import static android.view.View.*;
+
 /**
  * Name: SchoolListFragment
  * Purpose: Displays a list of NYC schools in a RecyclerView.
@@ -23,7 +26,10 @@ import java.util.List;
 public class SchoolListFragment extends Fragment implements SchoolListView, MyRecyclerViewClickListener {
 
     private RecyclerView mSchoolList;
+    private ProgressBar mProgressBar;
     private OnSchoolClickedListener mCallback;
+
+    private List<SchoolPOJO> mSchoolData;
 
     public SchoolListFragment() {
         // Required empty public constructor
@@ -51,10 +57,15 @@ public class SchoolListFragment extends Fragment implements SchoolListView, MyRe
 
         //Bind the RecyclerView
         mSchoolList = view.findViewById(R.id.recycler_school_list);
+        mProgressBar = view.findViewById(R.id.pb_school_list_loading);
 
-        //Start downloading list of schools
-        //TODO: Add progress bar for this.
-        mSchoolListPresenter.getListOfSchools();
+        //Start downloading list of schools. If already downloaded, just populate RecyclerView.
+        if(mSchoolData == null){
+            mSchoolListPresenter.getListOfSchools();
+        } else{
+            populateListOfSchools(mSchoolData);
+        }
+
 
         return view;
     }
@@ -70,9 +81,15 @@ public class SchoolListFragment extends Fragment implements SchoolListView, MyRe
      */
     @Override
     public void populateListOfSchools(List<SchoolPOJO> schoolList) {
+        //Retain the data for later, since it's not likely to change much.
+        mSchoolData = schoolList;
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         mSchoolList.setLayoutManager(layoutManager);
         mSchoolList.setAdapter(new SchoolListAdapter(this, schoolList));
+
+        //Hide loading bar and show RecyclerView if not already visible
+        mProgressBar.setVisibility(GONE);
+        mSchoolList.setVisibility(VISIBLE);
     }
 
     /**

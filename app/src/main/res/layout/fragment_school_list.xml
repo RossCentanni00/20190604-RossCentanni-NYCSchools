@@ -6,8 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".View.SchoolList.SchoolListFragment">
 
+    <ProgressBar
+        android:id="@+id/pb_school_list_loading"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_school_list"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </LinearLayout>
