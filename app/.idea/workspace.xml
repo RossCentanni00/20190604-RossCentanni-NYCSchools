@@ -5,12 +5,25 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3c186c30-0f4d-4ec7-b35f-f8271eaddc42" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_bytebuddy_byte_buddy_1_9_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_bytebuddy_byte_buddy_agent_1_9_10_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_2_28_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_objenesis_objenesis_2_6_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolListPresenterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Model/ScoresPOJO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Model/ScoresPOJO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_school_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_school_list.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/item_school_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/item_school_list.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,49 +40,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+            <state relative-caret-position="355">
+              <caret line="106" column="7" lean-forward="true" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
+              <folding>
+                <element signature="e#823#824#0" expanded="true" />
+                <element signature="e#861#862#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenterTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="355">
+              <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolListPresenter.java">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolListPresenterTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+            <state relative-caret-position="17">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListFragment.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Model/ScoresPOJO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_school_list.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            <state relative-caret-position="117">
+              <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit4 Test Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -77,10 +104,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListFragment.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_school_list.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/MainActivity.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolListPresenter.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolListPresenterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/item_school_list.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Model/ScoresPOJO.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenterTest.java" />
       </list>
     </option>
   </component>
@@ -122,7 +155,21 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="a20190604_rosscentanni_nycschools" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20190604RossCentanniNYCSchools" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="a20190604_rosscentanni_nycschools" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="Presenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20190604RossCentanniNYCSchools" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="a20190604_rosscentanni_nycschools" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Retrofit" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="20190604RossCentanniNYCSchools" type="1abcf292:AndroidViewProjectNode" />
@@ -142,6 +189,19 @@
             <path>
               <item name="20190604RossCentanniNYCSchools" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="a20190604_rosscentanni_nycschools" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20190604RossCentanniNYCSchools" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="a20190604_rosscentanni_nycschools" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Presenter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20190604RossCentanniNYCSchools" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
             </path>
             <path>
@@ -149,6 +209,10 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
               <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="20190604RossCentanniNYCSchools" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -158,9 +222,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="device.picker.selection" value="Pixel_XL_API_23" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.a20190604_rosscentanni_nycschools.Presenter" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -174,7 +249,91 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android JUnit.SchoolInfoPresenterTest.onRequestSuccess_fills_in_any_missing_information_for_non_empty_result_and_passes_to_view">
+    <configuration name="SchoolInfoPresenterTest.onRequestSuccess_fills_in_any_missing_information_for_non_empty_result_and_passes_to_view" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.a20190604_rosscentanni_nycschools.Presenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter" />
+      <option name="MAIN_CLASS_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter.SchoolInfoPresenterTest" />
+      <option name="METHOD_NAME" value="onRequestSuccess_fills_in_any_missing_information_for_non_empty_result_and_passes_to_view" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchoolInfoPresenterTest.onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.a20190604_rosscentanni_nycschools.Presenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter" />
+      <option name="MAIN_CLASS_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter.SchoolInfoPresenterTest" />
+      <option name="METHOD_NAME" value="onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchoolListPresenterTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.a20190604_rosscentanni_nycschools.Presenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter" />
+      <option name="MAIN_CLASS_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter.SchoolListPresenterTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchoolListPresenterTest.getListOfSchools_calls_retrofit_client_service" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.a20190604_rosscentanni_nycschools.Presenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter" />
+      <option name="MAIN_CLASS_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter.SchoolListPresenterTest" />
+      <option name="METHOD_NAME" value="getListOfSchools_calls_retrofit_client_service" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchoolListPresenterTest.onRequestSuccess_tells_view_to_populate_list" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.a20190604_rosscentanni_nycschools.Presenter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter" />
+      <option name="MAIN_CLASS_NAME" value="com.example.a20190604_rosscentanni_nycschools.Presenter.SchoolListPresenterTest" />
+      <option name="METHOD_NAME" value="onRequestSuccess_tells_view_to_populate_list" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -235,6 +394,15 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Android JUnit.SchoolInfoPresenterTest.onRequestSuccess_fills_in_any_missing_information_for_non_empty_result_and_passes_to_view" />
+        <item itemvalue="Android JUnit.SchoolInfoPresenterTest.onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view" />
+        <item itemvalue="Android JUnit.SchoolListPresenterTest" />
+        <item itemvalue="Android JUnit.SchoolListPresenterTest.onRequestSuccess_tells_view_to_populate_list" />
+        <item itemvalue="Android JUnit.SchoolListPresenterTest.getListOfSchools_calls_retrofit_client_service" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -249,6 +417,35 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="SchoolListPresenterTest_getListOfSchools_calls_retrofit_client_service - 2019.06.10 at 10h 19m 52s.xml">
+      <configuration name="SchoolListPresenterTest.getListOfSchools_calls_retrofit_client_service" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="SchoolListPresenterTest_onRequestSuccess_tells_view_to_populate_list - 2019.06.10 at 10h 35m 29s.xml">
+      <configuration name="SchoolListPresenterTest.onRequestSuccess_tells_view_to_populate_list" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="SchoolListPresenterTest_onRequestSuccess_tells_view_to_populate_list - 2019.06.10 at 10h 35m 44s.xml">
+      <configuration name="SchoolListPresenterTest.onRequestSuccess_tells_view_to_populate_list" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="SchoolListPresenterTest - 2019.06.10 at 10h 37m 21s.xml">
+      <configuration name="SchoolListPresenterTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="SchoolListPresenterTest - 2019.06.10 at 10h 42m 17s.xml">
+      <configuration name="SchoolListPresenterTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="SchoolInfoPresenterTest_onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view - 2019.06.10 at 10h 58m 11s.xml">
+      <configuration name="SchoolInfoPresenterTest.onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="SchoolInfoPresenterTest_onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view - 2019.06.10 at 10h 58m 50s.xml">
+      <configuration name="SchoolInfoPresenterTest.onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="SchoolInfoPresenterTest_onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view - 2019.06.10 at 11h 08m 48s.xml">
+      <configuration name="SchoolInfoPresenterTest.onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="SchoolInfoPresenterTest_onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view - 2019.06.10 at 11h 09m 03s.xml">
+      <configuration name="SchoolInfoPresenterTest.onRequestSuccess_fills_in_missing_information_for_empty_result_and_passes_to_view" configurationId="AndroidJUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
@@ -262,14 +459,14 @@
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Run" />
-      <window_info anchor="bottom" id="Logcat" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info active="true" anchor="bottom" id="Run" visible="true" weight="0.32872504" />
+      <window_info anchor="bottom" id="Logcat" weight="0.32872504" />
+      <window_info anchor="bottom" id="Version Control" sideWeight="0.49924356" weight="0.32872504" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Android Profiler" />
-      <window_info active="true" anchor="bottom" id="Debug" visible="true" weight="0.32872504" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" weight="0.32872504" />
+      <window_info anchor="bottom" id="Terminal" sideWeight="0.49848714" weight="0.32872504" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5015129" side_tool="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Build" weight="0.32872504" />
       <window_info anchor="right" id="Device File Explorer" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" />
@@ -284,13 +481,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListFragment.java</url>
-          <line>65</line>
+          <line>66</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListFragment.java</url>
-          <line>63</line>
+          <line>64</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -306,27 +503,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolListPresenter.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
-          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Retrofit/MyRetrofitClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/item_school_list.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="340">
+          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolListPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#842#843#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/View/SchoolList/SchoolListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Model/ScoresPOJO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolListPresenterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        <state relative-caret-position="355">
+          <caret line="106" column="7" lean-forward="true" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
+          <folding>
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#861#862#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/example/a20190604_rosscentanni_nycschools/Presenter/SchoolInfoPresenterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

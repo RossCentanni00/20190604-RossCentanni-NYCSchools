@@ -28,7 +28,7 @@ public class SchoolInfoPresenter implements SchoolInfoRequestCallback {
      */
 
     /**
-     * Passes dbKey to Retrofit cvlient so that it may get a given school's test scores
+     * Passes dbKey to Retrofit client so that it may get a given school's test scores
      *
      * @param dbKey the school's dbKey
      */

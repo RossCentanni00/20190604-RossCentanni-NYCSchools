@@ -1,5 +1,7 @@
 package com.example.a20190604_rosscentanni_nycschools.Model;
 
+import android.support.annotation.Nullable;
+
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -41,5 +43,22 @@ public class ScoresPOJO {
 
     public void setWritingSATScore(String writingSATScore) {
         this.writingSATScore = writingSATScore;
+    }
+
+    /**
+     * Overridden equals for Junits
+     * @param obj arbitrary object
+     * @return true if they are equal, false if not
+     */
+    @Override
+    public boolean equals(@Nullable Object obj) {
+        if(obj instanceof ScoresPOJO){
+            ScoresPOJO temp = (ScoresPOJO) obj;
+            return (this.mathSATScore.equals(temp.getMathSATScore()) &&
+                    this.readingSATScore.equals(temp.getReadingSATScore()) &&
+                    this.writingSATScore.equals(temp.writingSATScore));
+        } else{
+            return false;
+        }
     }
 }

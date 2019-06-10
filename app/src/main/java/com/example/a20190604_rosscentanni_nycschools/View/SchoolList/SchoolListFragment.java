@@ -3,6 +3,7 @@ package com.example.a20190604_rosscentanni_nycschools.View.SchoolList;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -83,9 +84,10 @@ public class SchoolListFragment extends Fragment implements SchoolListView, MyRe
     public void populateListOfSchools(List<SchoolPOJO> schoolList) {
         //Retain the data for later, since it's not likely to change much.
         mSchoolData = schoolList;
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mSchoolList.setLayoutManager(layoutManager);
         mSchoolList.setAdapter(new SchoolListAdapter(this, schoolList));
+        mSchoolList.addItemDecoration(new DividerItemDecoration(getContext(), layoutManager.getOrientation()));
 
         //Hide loading bar and show RecyclerView if not already visible
         mProgressBar.setVisibility(GONE);
